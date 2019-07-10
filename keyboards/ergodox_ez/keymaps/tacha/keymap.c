@@ -65,14 +65,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| QWPR |           | GAME |------+------+------+------+------+--------|
  * | LShift |      |      |      |      |      |      |           |      |      |      |      |      |      | /?     |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      |  `~  | [{   |                                       | ]}   | \|   |      |      |      |
+ *   |      |      |      |      | LGUI |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
- *                                        | ESC  | RESET|       |      |  HOME  |
+ *                                        | ESC  | RESET|       | DEL  |  HOME  |
  *                                 ,------|------|------|       |------+--------+------.
- *                                 |      | Back | LGUI |       | RAlt |        |      |
+ *                                 |      | Back |  `~  |       |  \|  |        |      |
  *                                 | space| space|------|       |------|  Tab   | Enter|
- *                                 | /NUM |/CTRL |LShift|       |RShift| /CTRL  | /NAV |
+ *                                 | /NUM |/CTRL |[{/SFT|       |]}/SFT| /CTRL  | /NAV |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -83,11 +83,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LALT,    _______,    _______,    _______,    _______,    _______,    TO(L_QWERTY),
   KC_LCTL,    _______,    _______,    _______,    _______,    _______,
   KC_LSFT,    _______,    _______,    _______,    _______,    _______,      TO(L_QWPR),
-  _______,    _______,    _______,     KC_GRV,    KC_LBRC,
+              _______,    _______,    _______,    _______,    KC_LGUI,
 
                                KC_ESC,      RESET,
-                                          KC_LGUI,
-  LT(L_NUM,KC_SPC),    CTL_T(KC_BSPC),    KC_LSFT,
+                                           KC_GRV,
+  LT(L_NUM,KC_SPC),    CTL_T(KC_BSPC),    SFT_T(KC_LBRC),
 
 
   //righthand
@@ -95,11 +95,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   TO(L_BEAKL),    _______,    _______,    _______,    _______,    _______,     KC_EQL,
                   _______,    _______,    _______,    _______,    _______,    KC_MINS,
       CK_GAME,    _______,    _______,    _______,    _______,    _______,    KC_SLSH,
-                              KC_RBRC,    KC_BSLS,    _______,    _______,    _______,
+                  _______,    _______,    _______,    _______,    _______,
 
-         ,    KC_HOME,
-  KC_RALT,
-  KC_RSFT,     CTL_T(KC_TAB),    LT(L_NAV,KC_ENT)
+  KC_DELT,    KC_HOME,
+  KC_BSLS,
+  SFT_T(KC_RBRC),     CTL_T(KC_TAB),    LT(L_NAV,KC_ENT)
 ),
 
 /* LAYOUT_ergodox : QWERTY
